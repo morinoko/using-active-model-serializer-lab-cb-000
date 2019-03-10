@@ -22,7 +22,8 @@ $(function() {
       $("#product-" + id).html(descriptionText);
 
       data['orders'].each(order, function(key, value) {
-
+        var orderLi = "<li>" + order["id"] + ": " + order["created_at"] + "</li>";
+        $('#orders-' + id + " ul").append(orderLi);
       });
     });
   });
