@@ -2387,3 +2387,11 @@ Processing by ProductsController#show as JSON
 [active_model_serializers] No serializer found for resource: #<Order id: 27, customer_id: 14, invoice_id: 15, created_at: "2019-03-10 22:16:32", updated_at: "2019-03-10 22:16:32">
 [active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (2.02ms)
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 126.2.63.14 at 2019-03-10 22:57:02 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.3ms)
