@@ -2,7 +2,7 @@
 <% @products.each do |product| %>
   <h3><%= product.name %> <%= product.id %></h3>
   <div id="product-<%= product.id %>"><%= truncate(product.description) %></div>
-  <div id="orders-<%= product.id %>"></div>
+  <div id="orders-<%= product.id %>"><ul></ul></div>
   <button class="js-more" data-id="<%= product.id %>">More Info</button>
 <% end %>
 
@@ -14,12 +14,16 @@ $(function() {
     $.get("/products/" + id + ".json", function(data) {
       var inventoryText = "<strong>Available</strong>";
 
-      if(data['inventory'] === 0){
+      if (data['inventory'] === 0) {
         inventoryText = "<strong>Sold Out</strong>";
       }
 
       var descriptionText = "<p>" + data["description"] + "</p><p>" + inventoryText + "</p>";
       $("#product-" + id).html(descriptionText);
+
+      data['orders'].each(order, function(key, value) {
+        
+      });
     });
   });
 });
