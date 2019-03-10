@@ -23,7 +23,7 @@ $(function() {
 
       if (data["orders"].length > 0) {
         data["orders"].forEach(function(order) {
-          var orderLi = "<li>Order ID:" + order["id"] + " - " + order["created_at"] + "</li>";
+          var orderLi = "<li>Order ID " + order["id"] + ": " + order["created_at"] + "</li>";
           $('#orders-' + id + " ul").append(orderLi);
         });
       }
