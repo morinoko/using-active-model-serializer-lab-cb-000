@@ -22,10 +22,12 @@ $(function() {
       var descriptionText = "<p>" + data["description"] + "</p><p>" + inventoryText + "</p>";
       $("#product-" + id).html(descriptionText);
 
-      data["orders"].forEach(function(order) {
-        var orderLi = "<li>" + order["id"] + ": " + order["created_at"] + "</li>";
-        $('#orders-' + id + " ul").append(orderLi);
-      });
+      if (data["orders"].length > 0) {
+        data["orders"].forEach(function(order) {
+          var orderLi = "<li>" + order["id"] + ": " + order["created_at"] + "</li>";
+          $('#orders-' + id + " ul").append(orderLi);
+        });
+      }
     });
   });
 });
