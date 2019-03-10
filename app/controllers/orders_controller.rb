@@ -4,7 +4,11 @@ class OrdersController < ApplicationController
   end
 
   def show
-    order = Order.find(params[:id])
-    render json: order
+    @order = Order.find(params[:id])
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: order }
+    end
   end
 end
