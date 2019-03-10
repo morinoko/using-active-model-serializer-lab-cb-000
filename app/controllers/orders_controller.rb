@@ -6,8 +6,6 @@ class OrdersController < ApplicationController
   def show
     order = Order.find(params[:id])
 
-    respond_to do |format|
-      format.json { render json: order }
-    end
+    render json: order
   end
 end
